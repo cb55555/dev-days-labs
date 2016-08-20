@@ -124,7 +124,7 @@ Notice that we call **OnPropertyChanged();** whenever the value changes. The Xam
 
 We will use an **ObservableCollection<Speaker>** that will be cleared and then loaded with speakers. We will use an **ObservableCollection** because it has built-in support for **CollectionChanged** events when we Add or Remove from it. This is very nice so we don't have to call **OnPropertyChanged** each time.
 
-In the class above the constructor declare an auto-property:
+Above the constructor of the SpeakersViewModel class definition, declare an auto-property:
 
 ```csharp
 public ObservableCollection<Speaker> Speakers { get; set; }
@@ -146,7 +146,7 @@ We are now set to create a method named **GetSpeakers** which will retrieve the 
 First, create a method called **GetSpeakers** which is of type *async Task* (it is a Task because it is using Async methods):
 
 ```csharp
-async Task GetSpeakers()
+public async Task GetSpeakers()
 {
 
 }
@@ -156,7 +156,7 @@ The following code will be written INSIDE of this method:
 First is to check if we are already grabbing data:
 
 ```csharp
-async Task GetSpeakers()
+public async Task GetSpeakers()
 {
     if(IsBusy)
         return;
